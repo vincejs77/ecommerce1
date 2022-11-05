@@ -16,23 +16,23 @@
 		$_SESSION['email'] = $email;
 
 		if(!isset($_SESSION['captcha'])){
-			require('recaptcha/src/autoload.php');		
-			$recaptcha = new \ReCaptcha\ReCaptcha('6LevO1IUAAAAAFCCiOHERRXjh3VrHa5oywciMKcw', new \ReCaptcha\RequestMethod\SocketPost());
-			$resp = $recaptcha->verify($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);
+		  	require('recaptcha/src/autoload.php');		
+		  	$recaptcha = new \ReCaptcha\ReCaptcha('6LevO1IUAAAAAFCCiOHERRXjh3VrHa5oywciMKcw', new \ReCaptcha\RequestMethod\SocketPost());
+		  	$resp = $recaptcha->verify($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);
 
-			if (!$resp->isSuccess()){
-		  		$_SESSION['error'] = 'Please answer recaptcha correctly';
-		  		header('location: signup.php');	
-		  		exit();	
-		  	}	
-		  	else{
-		  		$_SESSION['captcha'] = time() + (10*60);
-		  	}
+		  	if (!$resp->isSuccess()){
+		    		$_SESSION['error'] = 'Repondez au recaptcha correctement';
+		    		header('location: signup.php');	
+		    		exit();	
+		    	}	
+		    	else{
+		    		$_SESSION['captcha'] = time() + (10*60);
+		    	}
 
 		}
 
 		if($password != $repassword){
-			$_SESSION['error'] = 'Passwords did not match';
+			$_SESSION['error'] = 'Les mots de passe ne correspondent pas';
 			header('location: signup.php');
 		}
 		else{
@@ -42,7 +42,7 @@
 			$stmt->execute(['email'=>$email]);
 			$row = $stmt->fetch();
 			if($row['numrows'] > 0){
-				$_SESSION['error'] = 'Email already taken';
+				$_SESSION['error'] = "Adresse e-mail déjà prise";
 				header('location: signup.php');
 			}
 			else{
@@ -59,12 +59,12 @@
 					$userid = $conn->lastInsertId();
 
 					$message = "
-						<h2>Thank you for Registering.</h2>
-						<p>Your Account:</p>
+						<h2>Merci de votre inscription.</h2>
+						<p>Votre compte:</p>
 						<p>Email: ".$email."</p>
-						<p>Password: ".$_POST['password']."</p>
-						<p>Please click the link below to activate your account.</p>
-						<a href='http://localhost/ecommerce/activate.php?code=".$code."&user=".$userid."'>Activate Account</a>
+						<p>Mot de passe: ".$_POST['password']."</p>
+						<p>Veuillez cliquer sur le lien ci-dessous pour activer votre compte.</p>
+						<a href='http://localhost/ecommerce3/ecommerce/activate.php?code=".$code."&user=".$userid."'>Activer le compte</a>
 					";
 
 					//Load phpmailer
@@ -96,7 +96,7 @@
 				       
 				        //Content
 				        $mail->isHTML(true);                                  
-				        $mail->Subject = 'ECommerce Site Sign Up';
+				        $mail->Subject = 'Inscription au site de commerce électronique';
 				        $mail->Body    = $message;
 
 				        $mail->send();
@@ -105,12 +105,12 @@
 				        unset($_SESSION['lastname']);
 				        unset($_SESSION['email']);
 
-				        $_SESSION['success'] = 'Account created. Check your email to activate.';
+				        $_SESSION['success'] = 'Compte créé. Vérifiez votre e-mail pour activer.';
 				        header('location: signup.php');
 
 				    } 
 				    catch (Exception $e) {
-				        $_SESSION['error'] = 'Message could not be sent. Mailer Error: '.$mail->ErrorInfo;
+				        $_SESSION['error'] = 'Le message n a pas pu être envoyé. Erreur de messagerie: '.$mail->ErrorInfo;
 				        header('location: signup.php');
 				    }
 
@@ -129,7 +129,7 @@
 
 	}
 	else{
-		$_SESSION['error'] = 'Fill up signup form first';
+		$_SESSION['error'] = 'Remplissez d abord le formulaire d inscription';
 		header('location: signup.php');
 	}
 

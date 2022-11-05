@@ -30,10 +30,13 @@
         <div class="box-body">
             <p>Recevez des mises à jour gratuites sur les derniers produits et remises, directement dans votre boîte de
                 réception.</p>
+            <div class="mt-6">
+
+            </div>
             <form method="POST" action="">
                 <div class="input-group">
                     <input type="text" class="form-control">
-                    <span class="input-group-btn">
+                    <span class="input-group-btn bg-blue-900">
                         <button type="button" class="btn btn-info btn-flat"><i class="fa fa-envelope"></i> </button>
                     </span>
                 </div>

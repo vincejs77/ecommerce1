@@ -11,27 +11,28 @@
 		$catid = $cat['id'];
 	}
 	catch(PDOException $e){
-		echo "There is some problem in connection: " . $e->getMessage();
+		echo "Problème de connection: " . $e->getMessage();
 	}
 
 	$pdo->close();
 
 ?>
 <?php include 'includes/header.php'; ?>
+
 <body class="hold-transition skin-blue layout-top-nav">
-<div class="wrapper">
+    <div class="wrapper">
 
-	<?php include 'includes/navbar.php'; ?>
-	 
-	  <div class="content-wrapper">
-	    <div class="container">
+        <?php include 'includes/navbar.php'; ?>
 
-	      <!-- Main content -->
-	      <section class="content">
-	        <div class="row">
-	        	<div class="col-sm-9">
-		            <h1 class="page-header"><?php echo $cat['name']; ?></h1>
-		       		<?php
+        <div class="content-wrapper">
+            <div class="container">
+
+                <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <h1 class="page-header"><?php echo $cat['name']; ?></h1>
+                            <?php
 		       			
 		       			$conn = $pdo->open();
 
@@ -62,25 +63,26 @@
 							if($inc == 2) echo "<div class='col-sm-4'></div></div>";
 						}
 						catch(PDOException $e){
-							echo "There is some problem in connection: " . $e->getMessage();
+							echo "Ceci est un problème de connexion: " . $e->getMessage();
 						}
 
 						$pdo->close();
 
-		       		?> 
-	        	</div>
-	        	<div class="col-sm-3">
-	        		<?php include 'includes/sidebar.php'; ?>
-	        	</div>
-	        </div>
-	      </section>
-	     
-	    </div>
-	  </div>
-  
-  	<?php include 'includes/footer.php'; ?>
-</div>
+		       		?>
+                        </div>
+                        <div class="col-sm-3">
+                            <?php include 'includes/sidebar.php'; ?>
+                        </div>
+                    </div>
+                </section>
 
-<?php include 'includes/scripts.php'; ?>
+            </div>
+        </div>
+
+        <?php include 'includes/footer.php'; ?>
+    </div>
+
+    <?php include 'includes/scripts.php'; ?>
 </body>
+
 </html>

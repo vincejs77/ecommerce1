@@ -1,18 +1,19 @@
 <?php include 'includes/session.php'; ?>
 <?php include 'includes/header.php'; ?>
+
 <body class="hold-transition skin-blue layout-top-nav">
-<div class="wrapper">
+    <div class="wrapper">
 
-	<?php include 'includes/navbar.php'; ?>
-	 
-	  <div class="content-wrapper">
-	    <div class="container">
+        <?php include 'includes/navbar.php'; ?>
 
-	      <!-- Main content -->
-	      <section class="content">
-	        <div class="row">
-	        	<div class="col-sm-9">
-	            <?php
+        <div class="content-wrapper">
+            <div class="container">
+
+                <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <?php
 	       			
 	       			$conn = $pdo->open();
 
@@ -20,10 +21,10 @@
 	       			$stmt->execute(['keyword' => '%'.$_POST['keyword'].'%']);
 	       			$row = $stmt->fetch();
 	       			if($row['numrows'] < 1){
-	       				echo '<h1 class="page-header">No results found for <i>'.$_POST['keyword'].'</i></h1>';
+	       				echo '<h1 class="page-header">Aucun résultat pour <i>'.$_POST['keyword'].'</i></h1>';
 	       			}
 	       			else{
-	       				echo '<h1 class="page-header">Search results for <i>'.$_POST['keyword'].'</i></h1>';
+	       				echo '<h1 class="page-header">Résultat de recherche pour <i>'.$_POST['keyword'].'</i></h1>';
 		       			try{
 		       			 	$inc = 3;	
 						    $stmt = $conn->prepare("SELECT * FROM products WHERE name LIKE :keyword");
@@ -54,26 +55,27 @@
 							
 						}
 						catch(PDOException $e){
-							echo "There is some problem in connection: " . $e->getMessage();
+							echo "Ceci est un problème de connexion: " . $e->getMessage();
 						}
 					}
 
 					$pdo->close();
 
-	       		?> 
-	        	</div>
-	        	<div class="col-sm-3">
-	        		<?php include 'includes/sidebar.php'; ?>
-	        	</div>
-	        </div>
-	      </section>
-	     
-	    </div>
-	  </div>
-  
-  	<?php include 'includes/footer.php'; ?>
-</div>
+	       		?>
+                        </div>
+                        <div class="col-sm-3">
+                            <?php include 'includes/sidebar.php'; ?>
+                        </div>
+                    </div>
+                </section>
 
-<?php include 'includes/scripts.php'; ?>
+            </div>
+        </div>
+
+        <?php include 'includes/footer.php'; ?>
+    </div>
+
+    <?php include 'includes/scripts.php'; ?>
 </body>
+
 </html>

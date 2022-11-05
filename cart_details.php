@@ -32,7 +32,7 @@
 				$total += $subtotal;
 				$output .= "
 					<tr>
-						<td><button type='button' data-id='".$row['cartid']."' class='btn btn-danger btn-flat cart_delete'><i class='fa fa-remove'></i></button></td>
+						<td><button type='button' data-id='".$row['cartid']."' class='btn btn-danger btn-flat bg-red-600 cart_delete'><i class='fa fa-remove'></i></button></td>
 						<td><img src='".$image."' width='30px' height='30px'></td>
 						<td>".$row['name']."</td>
 						<td>&#36; ".number_format($row['price'], 2)."</td>
@@ -75,7 +75,7 @@
 				$total += $subtotal;
 				$output .= "
 					<tr>
-						<td><button type='button' data-id='".$row['productid']."' class='btn btn-danger btn-flat cart_delete'><i class='fa fa-remove'></i></button></td>
+						<td><button type='button' data-id='".$row['productid']."' class='btn btn-danger btn-flat cart bg-red-600 delete'><i class='fa fa-remove'></i></button></td>
 						<td><img src='".$image."' width='30px' height='30px'></td>
 						<td>".$product['name']."</td>
 						<td>&#36; ".number_format($product['price'], 2)."</td>
@@ -117,4 +117,3 @@
 	echo json_encode($output);
 
 ?>
-

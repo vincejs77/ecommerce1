@@ -22,11 +22,11 @@
 				$stmt->execute(['code'=>$code, 'id'=>$row['id']]);
 				
 				$message = "
-					<h2>Password Reset</h2>
-					<p>Your Account:</p>
+					<h2>Réinitialisation du mot de passe</h2>
+					<p>Votre compte:</p>
 					<p>Email: ".$email."</p>
-					<p>Please click the link below to reset your password.</p>
-					<a href='http://localhost/ecommerce/password_reset.php?code=".$code."&user=".$row['id']."'>Reset Password</a>
+					<p>Veuillez cliquer sur le lien ci-dessous pour réinitialiser votre mot de passe.</p>
+					<a href='http://localhost/ecommerce3/ecommerce/password_reset.php?code=".$code."&user=".$row['id']."'>Reinitialiser mot de passe</a>
 				";
 
 				//Load phpmailer
@@ -38,7 +38,7 @@
 			        $mail->isSMTP();                                     
 			        $mail->Host = 'smtp.gmail.com';                      
 			        $mail->SMTPAuth = true;                               
-			        $mail->Username = 'testsourcecodester@gmail.com';     
+			        $mail->Username = 'dithyrambebin@gmail.com';     
 			        $mail->Password = 'mysourcepass';                    
 			        $mail->SMTPOptions = array(
 			            'ssl' => array(
@@ -50,24 +50,24 @@
 			        $mail->SMTPSecure = 'ssl';                           
 			        $mail->Port = 465;                                   
 
-			        $mail->setFrom('testsourcecodester@gmail.com');
+			        $mail->setFrom('dithyrambebin@gmail.com');
 			        
 			        //Recipients
 			        $mail->addAddress($email);              
-			        $mail->addReplyTo('testsourcecodester@gmail.com');
+			        $mail->addReplyTo('dithyrambebin@gmail.com');
 			       
 			        //Content
 			        $mail->isHTML(true);                                  
-			        $mail->Subject = 'ECommerce Site Password Reset';
+			        $mail->Subject = 'Réinitialisation du mot de passe du site BinMarket';
 			        $mail->Body    = $message;
 
 			        $mail->send();
 
-			        $_SESSION['success'] = 'Password reset link sent';
+			        $_SESSION['success'] = 'Lien de réinitialisation du mot de passe envoyé';
 			     
 			    } 
 			    catch (Exception $e) {
-			        $_SESSION['error'] = 'Message could not be sent. Mailer Error: '.$mail->ErrorInfo;
+			        $_SESSION['error'] = " Le message n'a pas pu être envoyé. Erreur de messagerie ".$mail->ErrorInfo;
 			    }
 			}
 			catch(PDOException $e){
@@ -75,14 +75,14 @@
 			}
 		}
 		else{
-			$_SESSION['error'] = 'Email not found';
+			$_SESSION['error'] = "Email non trouvé";
 		}
 
 		$pdo->close();
 
 	}
 	else{
-		$_SESSION['error'] = 'Input email associated with account';
+		$_SESSION['error'] = "Entrez l'e-mail associé au compte";
 	}
 
 	header('location: password_forgot.php');

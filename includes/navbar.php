@@ -34,7 +34,7 @@
                   }
                 }
                 catch(PDOException $e){
-                  echo "There is some problem in connection: " . $e->getMessage();
+                  echo "Il y a un problème de connexion: " . $e->getMessage();
                 }
 
                 $pdo->close();
@@ -45,10 +45,11 @@
                     </ul>
                     <form method="POST" class="navbar-form navbar-left" action="search.php">
                         <div class="input-group">
-                            <input type="text" class="form-control" id="navbar-search-input" name="keyword"
+                            <input type="text" class="form-control w-full" id="navbar-search-input" name="keyword"
                                 placeholder="Rechercher un produit" required>
-                            <span class="input-group-btn" id="searchBtn" style="display:none;">
-                                <button type="submit" class="btn btn-default btn-flat"><i class="fa fa-search"></i>
+                            <span class="input-group-btn " id="searchBtn">
+                                <button type="submit" class="btn bg-blue-700  btn-flat"><i
+                                        class="fa fa-search text-white"></i>
                                 </button>
                             </span>
                         </div>
@@ -86,19 +87,22 @@
                   <ul class="dropdown-menu">
                     <!-- User image -->
                     <li class="user-header">
-                      <img src="'.$image.'" class="img-circle" alt="User Image">
+                     <div class="flex justify-center item-center pt-12  ">
+                      <img src="'.$image.'" class="img-circle avatar1" alt="Image utilisateur">
+
+                     </div>
 
                       <p>
-                        '.$user['firstname'].' '.$user['lastname'].'
-                        <small>Member since '.date('M. Y', strtotime($user['created_on'])).'</small>
+                        <span class="text-bold"> '.$user['firstname'].' '.$user['lastname'].' </span>
+                        <small>Membre depuis '.date('M. Y', strtotime($user['created_on'])).'</small>
                       </p>
                     </li>
                     <li class="user-footer">
                       <div class="pull-left">
-                        <a href="profile.php" class="btn btn-default btn-flat">Profile</a>
+                        <a href="profile.php" class="btn btn-default btn-flat">Votre profile</a>
                       </div>
                       <div class="pull-right">
-                        <a href="logout.php" class="btn btn-default btn-flat">Sign out</a>
+                        <a href="logout.php" class="btn btn-default btn-flat">Deconnection</a>
                       </div>
                     </li>
                   </ul>

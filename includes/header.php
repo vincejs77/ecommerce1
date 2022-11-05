@@ -59,7 +59,7 @@
     /* Medium devices (desktops, 992px and up) */
     @media (min-width: 992px) {
         #navbar-search-input {
-            width: 150px;
+            width: 160px;
         }
 
         #navbar-search-input:focus {

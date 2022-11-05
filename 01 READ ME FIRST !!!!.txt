@@ -1,27 +1,21 @@
                          : : : : : LOGIN DETAILS : : : : : 
 
-ADMIN PANEL LOGIN:
+CONNEXION AU PANNEAU D'ADMINISTRATION :
 
->> NOTE : (for admin panel, login from the user's login)
->>Enter the following details in Login for Admin Panel.
+>> REMARQUE : (pour le panneau d'administration, connectez-vous à partir de la connexion de l'utilisateur)
+>> Entrez les détails suivants dans Connexion pour le panneau d'administration.
 
-Username: admin@admin.com
-Password: password
+Nom d'utilisateur : admin@admin.com
+Mot de passe : mot de passe
 
-USER LOGIN:
+UTILISATEUR EN LIGNE:
 
-Username: harry@den.com
-Password: code0
+Nom d'utilisateur : harry@den.com
+Mot de passe : code0
 
-DON'T FORGET TO CREATE A DATABASE NAMING "ecomm" AND IMPORT THE SQL FILE TO RUN.
-WITHOUT THE DATABASE THE PROJECT WON'T RUN.
+N'OUBLIEZ PAS DE CRÉER UNE BASE DE DONNÉES NOMMÉE "ecomm" ET D'IMPORTER LE FICHIER SQL À EXÉCUTER.
+SANS LA BASE DE DONNÉES, LE PROJET NE FONCTIONNERA PAS.
 
->>DATABASE FILE IS INSIDE "database" FOLDER!
+>> LE FICHIER DE BASE DE DONNÉES EST À L'INTÉRIEUR DU DOSSIER "base de données" !
 
-***** IF YOU FIND ANY ERRORS OR ANY PROBLEMS RELATED THIS PROGRAM, FEEL FREE TO CONTACT US *****  
-
-***** LEAVE A COMMENT IF YOU LOVED OUR WORK *****
-
-***** FOR MORE PROJECTS :- https://code-projects.org/ *****
-
-#THANK YOU FOR DOWNLOADING
+***** SI VOUS TROUVEZ DES ERREURS OU DES PROBLÈMES LIÉS À CE PROGRAMME, N'HÉSITEZ PAS À NOUS CONTACTER *****

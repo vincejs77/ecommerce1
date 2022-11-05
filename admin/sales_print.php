@@ -81,7 +81,7 @@
 
 	}
 	else{
-		$_SESSION['error'] = 'Need date range to provide sales print';
+		$_SESSION['error'] = "Besoin d'une plage de dates pour fournir l'impression des ventes";
 		header('location: sales.php');
 	}
 ?>
