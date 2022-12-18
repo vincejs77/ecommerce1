@@ -61,15 +61,15 @@
 	    $pdf->AddPage();  
 	    $content = '';  
 	    $content .= '
-	      	<h2 align="center">TechSoft IT Solutions</h2>
-	      	<h4 align="center">SALES REPORT</h4>
+	      	<h2 align="center">Bin Market - Wabu Media Shop</h2>
+	      	<h4 align="center">Rapport des ventes</h4>
 	      	<h4 align="center">'.$from_title." - ".$to_title.'</h4>
 	      	<table border="1" cellspacing="0" cellpadding="3">  
 	           <tr>  
 	           		<th width="15%" align="center"><b>Date</b></th>
-	                <th width="30%" align="center"><b>Buyer Name</b></th>
+	                <th width="30%" align="center"><b>Nom du Client</b></th>
 					<th width="40%" align="center"><b>Transaction#</b></th>
-					<th width="15%" align="center"><b>Amount</b></th>  
+					<th width="15%" align="center"><b>Montant</b></th>  
 	           </tr>  
 	      ';  
 	    $content .= generateRow($from, $to, $conn);  

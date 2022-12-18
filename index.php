@@ -1,7 +1,21 @@
 <?php include 'includes/session.php'; ?>
 <?php include 'includes/header.php'; ?>
 
+<?php 
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+?>
+
 <body class="hold-transition skin-blue layout-top-nav">
+    <!-- DEBUT WHATSAPP CHATBOX -->
+
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <div class="elfsight-app-428e9b2a-cc62-4176-84c5-afb479a1d501"></div>
+
+    <!-- FIN WHATSAPP CHATBOX -->
+
     <div class="wrapper">
 
         <?php include 'includes/navbar.php'; ?>
