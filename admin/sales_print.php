@@ -1,3 +1,9 @@
+<!-- 
+Error : localhost is currently unable to handle this request.
+https://askubuntu.com/questions/881290/php-localhost-is-currently-unable-to-handle-this-request-http-error-500
+ -->
+
+
 <?php
 	include 'includes/session.php';
 

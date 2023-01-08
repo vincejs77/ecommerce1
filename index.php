@@ -8,6 +8,11 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ?>
 
+<!-- 
+Error : localhost is currently unable to handle this request.
+https://askubuntu.com/questions/881290/php-localhost-is-currently-unable-to-handle-this-request-http-error-500
+ -->
+
 <body class="hold-transition skin-blue layout-top-nav">
     <!-- DEBUT WHATSAPP CHATBOX -->
 
